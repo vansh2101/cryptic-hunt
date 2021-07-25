@@ -183,9 +183,9 @@ app.get('/register', checkLogout, function (req, res) {
 
 app.post('/register', checkLogout, function (req, res) {
     try {
-        user_db.findOne({username: req.body.username}, (error, result)=>{
+        user_db.findOne({username: req.body.username.toLowerCase()}, (error, result)=>{
             if (result == null){
-                user_db.findOne({email: req.body.email}, async (err, re)=>{
+                user_db.findOne({email: req.body.email.toLowerCase()}, async (err, re)=>{
                     if (re==null){
                         if (req.body.pass1 === req.body.pass2){
                             const hashed_pass = await bcrypt.hash(req.body.pass1, 10);
@@ -195,7 +195,7 @@ app.post('/register', checkLogout, function (req, res) {
                                 username: req.body.username.trim().toLowerCase(),
                                 name: req.body.name.trim(),
                                 school: req.body.school.trim(),
-                                email: req.body.email.trim(),
+                                email: req.body.email.trim().toLowerCase(),
                                 password: hashed_pass,
                             });
                             data.save();
