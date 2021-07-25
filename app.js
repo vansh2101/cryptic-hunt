@@ -109,7 +109,7 @@ app.post('/email', function(req,res){
                         }
                     })
                 
-                    var text = `You have recieved this email regarding your request made for your account password change. Here are your Account details:- \nusername: ${result.username}\nemail: ${result.email}\nschool: ${result.school} \n\nPlease click on this link to change your password- http://localhost:8000/change-password/${link._id} \nPlease note that this link will only be available for 10 minutes.`
+                    var text = `You have recieved this email regarding your request made for your account password change. Here are your Account details:- \nusername: ${result.username}\nemail: ${result.email}\nschool: ${result.school} \n\nPlease click on this link to change your password- http://cryptic-hunt-website.herokuapp.com/change-password/${link._id} \nPlease note that this link will only be available for 10 minutes.`
         
                     const mail_options = {
                         from: 'sample.mail.2101@gmail.com',

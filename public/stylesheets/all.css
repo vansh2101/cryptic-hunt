@@ -198,6 +198,11 @@ body{
     .nav span.initial{
         font-size: 4.7vw;
     }
+
+    #snackbar{
+        font-size: 1.7vw;
+        bottom: 12%;
+    }
 }
 
 @media only screen and (max-width:800px){
@@ -219,6 +224,12 @@ body{
         font-size: 5.7vw;
         margin-top: -7%;
     }
+
+    #snackbar{
+        font-size: 2.1vw;
+        bottom: 5%;
+        min-width: 35vw;
+    }
 }
 
 @media only screen and (max-width:500px){
@@ -239,5 +250,10 @@ body{
     .nav span.initial{
         font-size: 7.5vw;
         margin-top: -5%;
+    }
+
+    #snackbar{
+        font-size: 3.5vw;
+        min-width: 40vw;
     }
 }
