@@ -16,7 +16,7 @@ const pass_link = require('./models/change_pass_link')
 
 
 //routing
-db.connect('mongodb+srv://sample_user:sample@cryptichunt.dbu2o.mongodb.net/cryptic_hunt?retryWrites=true&w=majority', {
+db.connect(process.env.DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -104,8 +104,8 @@ app.post('/email', function(req,res){
                         secure: false,
                         requireTLS: true,
                         auth: {
-                            user: 'sample.mail.2101@gmail.com',
-                            pass: 'sample@123',
+                            user: process.env.EMAIL,
+                            pass: process.env.EMAIL_PASSWORD,
                         }
                     })
                 
