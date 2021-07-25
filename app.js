@@ -192,7 +192,7 @@ app.post('/register', checkLogout, function (req, res) {
             
                             const data = new user_db({
                                 _id: new db.Types.ObjectId(),
-                                username: req.body.username.trim(),
+                                username: req.body.username.trim().toLowerCase(),
                                 name: req.body.name.trim(),
                                 school: req.body.school.trim(),
                                 email: req.body.email.trim(),
