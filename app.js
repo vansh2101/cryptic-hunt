@@ -26,7 +26,7 @@ db.connect('mongodb+srv://sample_user:sample@cryptichunt.dbu2o.mongodb.net/crypt
 passport_init(passport); //calling the initialize function from auth.js
 
 const app = express();
-app.listen(8000); //server running at localhost:8000
+app.listen(process.enc.PORT || 8000); //server running at localhost:8000
 app.set('view engine', 'ejs'); //specifying the template engine for using the template language
 app.use(express.static(__dirname + '/public')); //linking the styles folder for access to css files
 
