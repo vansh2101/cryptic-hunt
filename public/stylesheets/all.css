@@ -1,0 +1,243 @@
+@font-face {
+    font-family: quantify;
+    src: url(../fonts/Quantify.ttf);
+}
+@font-face {
+    font-family: orb;
+    src: url(../fonts/OCEAN\ RED\ BLUES.ttf);
+}
+@font-face {
+    font-family: montserrat;
+    src: url(../fonts/Montserrat-Medium.ttf);
+}
+
+body{
+    background-image: url(pics/wave.png);
+    background-repeat: no-repeat;
+    background-size: 100vw 105vh;
+    background-color: #e6e6e6;
+    font-family: montserrat;
+}
+
+.nav{
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #674af2;
+}
+
+.nav li{
+    float: right;
+    font-size: 1.35vw;
+    font-family: montserrat;
+    padding: 0px 20px;
+    margin-top: 0.5%;
+}
+.nav li a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+.nav li a.effect::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    display: block;
+    background: white;
+    transition: 0.3s ease-in-out;
+}
+.nav li a.effect:hover::after{
+    width: 100%;
+}
+.nav li button{
+    background-color: white;
+    color: #674af2;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    font-size: 1.55vw;
+    font-weight: bold;
+    font-family: montserrat;
+    padding: 6px 16px;
+    cursor: pointer;
+    margin-top: -4.5%;
+    transition: 0.3s;
+}
+.nav li button:hover{
+    color: white;
+    background-color: #9a88f7;
+}
+
+.nav span{
+    font-family: quantify;
+    font-size: 3vw;
+    color: white;
+    font-weight: bold;
+    float: left;
+}
+.nav span a{
+    text-decoration: none;
+    color: white;
+}
+.nav span.initial{
+    font-size: 4.5vw;
+    margin-top: -9%;
+}
+
+.openbtn{
+    display: none;
+    float: right;
+    font-size: 4.4vw;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+}
+.sidebar{
+    width: 0;
+    height: 100%;
+    z-index: 2;
+    background-color: #674af2;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding-top: 3vw;
+    transition: 0.5s;
+}
+.sidebar a {
+    padding: 2.5vw;
+    text-decoration: none;
+    text-align: center;
+    font-size: 5vw;
+    color: white;
+    display: block;
+}
+.sidebar input[type=submit]{
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background-color: inherit;
+    text-align: center;
+    font-size: 5vw;
+    color: white;
+    width: 30%;
+    font-weight: normal;
+    margin-top: 1.5%;
+}
+.closebtn{
+    background-color: inherit;
+    border: none;
+    outline: none;
+    font-size: 7vw;
+    margin-left: 5%;
+    cursor: pointer;
+    color: white;
+}
+
+
+/* Snackbar */
+#snackbar{
+    visibility: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 5%;
+    margin: auto;
+    width: fit-content;
+    min-width: 30vw;
+    background-color: #8670f5;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 1px 1px 10px gray;
+    z-index: 1;
+    font-size: 1.35vw;
+    font-family: montserrat;
+}
+#snackbar.visible{
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+@keyframes fadein {
+    from{bottom: 0%; opacity: 0;}
+    to {bottom: 5%; opacity: 1;}
+}
+@keyframes fadeout {
+    from {bottom: 5%; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-track{
+    background-color: #e6e6e6;
+    box-shadow: inset 1px 1px 10px gray;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #9a88f7;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #8670f5;
+}
+
+
+@media only screen and (max-width:1100px){
+    body{
+        background-size: 150vw 90vh;
+    }
+
+    .nav li{
+        font-size: 1.6vw;
+    }
+    .nav li button{
+        font-size: 1.7vw;
+    }
+    .nav span{
+        font-size: 3.2vw;
+    }
+    .nav span.initial{
+        font-size: 4.7vw;
+    }
+}
+
+@media only screen and (max-width:800px){
+    body{
+        background-size: auto 100vh;
+    }
+
+    .nav li{
+        display: none;
+    }
+    .openbtn{
+        display: block;
+        margin-top: -1%;
+    }
+    .nav span{
+        font-size: 4.2vw;
+    }
+    .nav span.initial{
+        font-size: 5.7vw;
+        margin-top: -7%;
+    }
+}
+
+@media only screen and (max-width:500px){
+    body{
+        background-size: auto 100vh;
+    }
+
+    .nav li{
+        display: none;
+    }
+    .openbtn{
+        font-size: 5.5vw;
+    }
+    .nav span{
+        font-size: 5.8vw;
+        margin-left: -8%;
+    }
+    .nav span.initial{
+        font-size: 7.5vw;
+        margin-top: -5%;
+    }
+}

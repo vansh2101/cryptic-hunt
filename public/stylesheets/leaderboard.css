@@ -1,0 +1,129 @@
+.container{
+    background-color: white;
+    padding: 15px 30px;
+    padding-top: 5px;
+    width: 60%;
+    height: 78vh;
+}
+.board{
+    overflow-y: auto;
+    height: 75%;
+    scroll-behavior: smooth;
+}
+h1{
+    font-family: orb;
+    font-size: 3vw;
+}
+.help-buttons{
+    position: fixed;
+    margin-top: -4%;
+    width: 60%;
+    text-align: right;
+}
+.help-buttons button{
+    margin-left: 2%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0.1px 0.1px 3px gray;
+    cursor: pointer;
+    font-family: montserrat;
+}
+.help-buttons button:hover{
+    background-color: #dddee0;
+}
+table{
+    width: 85%;
+    text-align: center;
+    font-size: 1.55vw;
+    line-height: 55px;
+    border-collapse: collapse;
+}
+th{
+    color: #674af2;
+    font-size: 1.7vw;
+}
+td{
+    border-bottom: 2px solid lightgray;
+}
+
+
+@media only screen and (max-width:1100px){
+    .container{
+        width: 65%;
+    }
+    h1{
+        font-size: 3.4vw;
+    }
+    .board{
+        margin-top: 3%;
+        height: 71%;
+    }
+    .help-buttons{
+        width: 63%;
+        margin-top: -5.5%;
+    }
+    .help-buttons button{
+        font-size: 1.5vw;
+    }
+    table{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width:800px){
+    .container{
+        width: 75%;
+    }
+    h1{
+        font-size: 3.8vw;
+    }
+    .board{
+        margin-top: 4%;
+        height: 75%;
+    }
+    .help-buttons{
+        width: 72%;
+        margin-top: -6.5%;
+    }
+    .help-buttons button{
+        font-size: 1.8vw;
+    }
+    table{
+        width: 93%;
+        font-size: 2vw;
+    }
+    th{
+        font-size: 2.3vw;
+    }
+}
+
+@media only screen and (max-width:500px){
+    .container{
+        width: 90%;
+        padding: 15px 20px;
+    }
+    h1{
+        font-size: 6vw;
+    }
+    .board{
+        margin-top: 6%;
+        height: 76%;
+    }
+    .help-buttons{
+        width: 85%;
+        margin-top: -12%;
+    }
+    .help-buttons button{
+        font-size: 2.2vw;
+    }
+    table{
+        width: 97%;
+        font-size: 2.7vw;
+    }
+    th{
+        font-size: 3vw;
+    }
+}

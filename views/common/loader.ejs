@@ -1,0 +1,39 @@
+<style>
+    #loader{
+        border-radius: 50%;
+        border: 12px solid #dddee0;
+        border-top: 12px solid #674af2;
+        width: 70px;
+        height: 70px;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .loader{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        margin: auto;
+    }
+</style>
+
+<div id="loader" class="loader"></div>
+
+<script>
+    document.onreadystatechange = ()=>{
+        if (document.readyState !== "complete") {
+            document.querySelector("body").style.visibility = "hidden";
+            document.querySelector("#loader").style.visibility = "visible";
+        } else {
+            document.querySelector("#loader").style.display = "none";
+            document.querySelector("body").style.visibility = "visible";
+        }
+    };
+</script>

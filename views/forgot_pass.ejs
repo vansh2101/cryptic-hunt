@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forgot Password?</title>
+        <link rel="stylesheet" href="/stylesheets/auth.css">
+        <link rel="shortcut icon" type="image/png" href="/stylesheets/pics/favicon.png">
+    </head>
+    <body>
+        <%- include('common/loader') -%>
+        <%- include('common/navbar') -%>
+
+        <div class="main">
+            <div class="left">
+                <center>
+                <div class="container">
+                    <h2>FORGOT PASSWORD?</h2>
+                    <form action="" method="POST">
+                        <input type="email" name='email' placeholder="Email" required>
+                        <br>
+
+                        <center>
+                        <input type="submit" value="SEND EMAIL">
+                        </center>
+                    </form>
+                </div>
+                </center>
+            </div>
+
+            <div class="right">
+                <img src="/stylesheets/pics/login.png">
+            </div>
+        </div>
+
+        <% if (msg.length !== 0) {%>
+            <div id='snackbar'>
+                <%= msg %>
+            </div>
+            <script>
+                var x = document.getElementById('snackbar');
+                x.className = 'visible';
+                setTimeout(function(){
+                    x.className = x.className.replace('visible', '')
+                }, 3000)
+            </script>
+        <% } %>
+    </body>
+    <script>
+        localStorage.removeItem('username');
+        localStorage.removeItem('name');
+        localStorage.removeItem('school');
+        localStorage.removeItem('email');
+    </script>
+</html>

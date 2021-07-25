@@ -1,0 +1,49 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/stylesheets/all.css">
+
+<ul class="nav">
+    <% if(user == undefined){ %>
+        <li><a href="/login"><button>Login</button></a></li>
+    <% } else{ %> 
+    <form action="/logout?_method=DELETE" method="POST">
+        <li><a href=""><button>Logout</button></a></li>
+    </form>
+    <li><a href="/user" class="effect">Profile</a></li>
+    <% } %> 
+    <li><a href="/leaderboard" class="effect">Leaderboard</a></li>
+    <li><a href="/about" class="effect">About</a></li>
+
+    <span><a href="/"><span class="initial">©</span>ORE</a></span>
+
+    <button onclick="show_sidebar()" class="openbtn"><i class="fa fa-bars" aria-hidden="true"></i></button>
+</ul>
+
+
+
+<div class="sidebar" id="sidebar">
+    <button class="closebtn" onclick="close_sidebar()"><i class="fa fa-times" aria-hidden="true"></i></button><br>
+
+    <a href="/about">ABOUT</a>
+    <a href="/leaderboard">LEADERBOARD</a>
+    <% if(user == undefined){ %>
+        <a href="/login">LOGIN</a>
+    <% } else{ %> 
+        <a href="/user">PROFILE</a>
+    <form action="/logout?_method=DELETE" method="POST">
+        <center>
+        <input type="submit" value="LOGOUT">
+        </center>
+    </form>
+    <% } %> 
+</div>
+
+<script>
+    function show_sidebar(){
+        document.getElementById('sidebar').style.width = "100%";
+    }
+    function close_sidebar(){
+        document.getElementById('sidebar').style.width = "0%";
+    } 
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question</title>
+    </head>
+    <body>
+        <%- include('common/loader') -%>
+        <%- include('common/navbar') -%>
+        <link rel="stylesheet" href="/stylesheets/dashboard.css">
+        <link rel="shortcut icon" type="image/png" href="/stylesheets/pics/favicon.png">
+
+        <center>
+            <div class="ques">
+                <center>
+                <div class="ques-no">LEVEL <%= question.number %> </div>
+                </center>
+                <p><%= question.question %></p>
+            </div>
+            <form action="/question" method="POST">
+                <input type="text" name="answer" required class="answer" placeholder="Enter Your Answer">
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+        </center>
+
+        <% if (msg.length !== 0) {%>
+            <div id='snackbar'>
+                <%= msg %>
+            </div>
+            <script>
+                var x = document.getElementById('snackbar');
+                x.className = 'visible';
+                setTimeout(function(){
+                    x.className = x.className.replace('visible', '')
+                }, 3000)
+            </script>
+        <% } %>
+    </body>
+</html>

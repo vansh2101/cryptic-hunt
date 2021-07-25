@@ -1,0 +1,252 @@
+body{
+    background-image: url(./pics/wave2.png);
+}
+
+.main{
+    display: flex;
+}
+.left{
+    width: 47%;
+    left: 0;
+    padding-left: 2vw;
+    padding-top: 20px;
+}
+.right{
+    width: 43%;
+    right: 0;
+    padding-left: 1vw;
+    padding-top: 20px;
+}
+
+.container{
+    background-color: white;
+    padding: 10px 50px;
+    width: 65%;
+    height: 70vh;
+    box-shadow: 1px 1px 10px gray;
+    text-align: left;
+}
+.container h1{
+    font-family: orb;
+    font-size: 3.4vw;
+    text-align: center;
+}
+.container label{
+    font-size: 2vw;
+    font-weight: bold;
+    color: gray;
+    line-height: 5.5vh;
+}
+.container p{
+    font-size: 1.4vw;
+    margin-left: 2%;
+    margin-top: 0.5%;
+}
+.container button{
+    width: 100%;
+    background-color: #8670f5;
+    border: none;
+    outline: none;
+    font-size: 2.3vw;
+    font-family: montserrat;
+    cursor: pointer;
+    margin-top: 15%;
+    box-shadow: 1px 1px 10px gray;
+    transition: 0.3s;
+}
+.container button:hover{
+    background-color: #674af2;
+}
+.progress-below{
+    height: 3.5vh;
+    width: 90%;
+    background-color: #b3b3b3;
+    margin-top: 3%;
+    margin-left: 2%;
+    box-shadow: 1px 1px 10px gray;
+}
+.progress-top{
+    width: 0;
+    height: 100%;
+    background-color: #674af2;
+    transition: 1s;
+}
+
+.ques{
+    width: 60%;
+    text-align: left;
+    background-color: white;
+    box-shadow: 1px 1px 10px gray;
+    padding: 17px 30px;
+    margin-top: 6%;
+    font-size: 1.7vw;
+}
+.ques-no{
+    border-radius: 20px;
+    background-color: #8670f5;
+    margin-top: -4.5%;
+    font-size: 1.9vw;
+    font-family: orb;
+    text-align: center;
+    width: 25%;
+    padding: 7px;
+}
+
+.answer{
+    width:60%;
+    height: 12vh;
+    padding: 3px 20px;
+    margin-top: 1%;
+    font-size: 1.5vw;
+    box-shadow: 1px 1px 10px gray;
+    border: none;
+    outline: none;
+}
+input[type=submit]{
+    border: none;
+    outline: none;
+    background-color: #8670f5;
+    font-size: 1.7vw;
+    margin-top: 3%;
+    padding: 15px 10px;
+    width:25%;
+    box-shadow: 1px 1px 10px gray;
+    font-weight: bold;
+    font-family: montserrat;
+    cursor: pointer;
+}
+input[type=submit]:hover{
+    background-color: #674af2;
+}
+
+
+@media only screen and (max-width:1100px){
+    body{
+        background-size: 100vw 100vh;
+    }
+    .container h1{
+        font-size: 3.6vw;
+    }
+    .container label{
+        font-size: 2.2vw;
+        line-height: 6vh;
+    }
+    .container p{
+        font-size: 1.7vw;
+        margin-top: 2%;
+    }
+    .container button{
+        font-size: 2.6vw;
+    }
+
+    .ques{
+        margin-top: 10%;
+        font-size: 2vw;
+    }
+    .ques-no{
+        margin-top: -6%;
+    }
+    .answer{
+        font-size: 1.75vw;
+    }
+    input[type=submit]{
+        font-size: 2vw;
+    }
+}
+
+@media only screen and (max-width:800px){
+    .main{
+        display: block;
+    }
+    .left, .right{
+        width: 95%;
+        padding-left: 2vw;
+    }
+    .container{
+        width: 50%;
+        margin-top: 2%;
+        height: 61vh;
+    }
+    .container h1{
+        font-size: 4.4vw;
+    }
+    .container label{
+        font-size: 3vw;
+    }
+    .container p{
+        font-size: 2.5vw;
+        margin-top: 2%;
+    }
+    .container button{
+        font-size: 3.5vw;
+        padding: 10px 1px;
+    }
+
+    .ques{
+        margin-top: 15%;
+        font-size: 2.7vw;
+        width: 70%;
+    }
+    .ques-no{
+        margin-top: -8%;
+        font-size: 2.4vw;
+        width: 30%;
+    }
+    .answer{
+        font-size: 2.7vw;
+        width: 70%;
+    }
+    input[type=submit]{
+        font-size: 2.7vw;
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width:500px){
+    .left, .right{
+        padding-left: 1vw;
+    }
+    .container{
+        width: 65%;
+        padding: 10px 25px;
+        height: 55vh;
+    }
+    .container h1{
+        font-size: 5vw;
+    }
+    .container label{
+        font-size: 4vw;
+    }
+    .container p{
+        font-size: 3.5vw;
+        margin-top: 2%;
+    }
+    .container button{
+        font-size: 4.5vw;
+    }
+    .progress-below{
+        height: 2.5vh;
+    }
+
+    .ques{
+        font-size: 4vw;
+        width: 80%;
+        margin-top: 20%;
+    }
+    .ques-no{
+        margin-top: -10%;
+        font-size: 3.1vw;
+        width: 35%;
+    }
+    .answer{
+        font-size: 4vw;
+        width: 80%;
+        margin-top: 3%;
+        height: 8vh;
+    }
+    input[type=submit]{
+        font-size: 4vw;
+        width: 35%;
+        margin-top: 5%;
+    }
+}

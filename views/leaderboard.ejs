@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Leaderboard</title>
+        <link rel="stylesheet" href="/stylesheets/leaderboard.css">
+        <link rel="shortcut icon" type="image/png" href="/stylesheets/pics/favicon.png">
+    </head>
+    <body>
+        <%- include('common/loader') -%>
+        <%- include('common/navbar') -%>
+
+        <center>
+            <div class="container">
+                <h1>LEADERBOARD</h1>
+                <br><br>
+                <div class="board">
+
+                    <div class="help-buttons">
+                        <a href="#top"><button>Take me to the top</button></a>
+
+                        <% if(user == undefined){ %>
+                        <% } else{ %>
+                            <a href="#<%= user.username %>"><button>Show my Rank</button></a>
+                        <% } %>
+                    </div>
+
+                    <table>
+                        <tr id='top'>
+                            <th>RANK</th>
+                            <th>USER</th>
+                            <th>SCHOOL</th>
+                            <th>SCORE</th>
+                        </tr>
+                        <tr></tr>
+                        <% ranks.forEach(function(rank, i){ %>
+                            <% if(user == undefined){ %>
+                                <tr id='<%= rank.username %>'>
+                                    <td><%= i+1 %></td>
+                                    <td><%= rank.username %></td>
+                                    <td><%= rank.school %></td>
+                                    <td><%= rank.score %></td>
+                                </tr>
+                            <% } else if (rank.username == user.username){ %>
+                                <tr id='<%= rank.username %>' style="background-color: #674af2;">
+                                    <td><%= i+1 %></td>
+                                    <td><%= rank.username %></td>
+                                    <td><%= rank.school %></td>
+                                    <td><%= rank.score %></td>
+                                </tr>
+                            <% } else{ %>
+                                <tr id='<%= rank.username %>'>
+                                    <td><%= i+1 %></td>
+                                    <td><%= rank.username %></td>
+                                    <td><%= rank.school %></td>
+                                    <td><%= rank.score %></td>
+                                </tr>
+                            <% } %>
+                        <% }) %>
+                    </table>
+
+                </div>
+                
+            </div>
+        </center>
+
+    </body>
+    <script>
+        localStorage.removeItem('username');
+        localStorage.removeItem('name');
+        localStorage.removeItem('school');
+        localStorage.removeItem('email');
+    </script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+        <link rel="stylesheet" href="/stylesheets/auth.css">
+        <link rel="shortcut icon" type="image/png" href="/stylesheets/pics/favicon.png">
+    </head>
+    <body>
+        <%- include('common/loader') -%>
+        <%- include('common/navbar') -%>
+
+        <div class="main">
+            <div class="left">
+                <center>
+                <div class="container register">
+                    <h1>SIGN UP</h1>
+                    <form action="/register" method="POST">
+                        <input type="text" name='username' placeholder="Username" required id='username' onchange="save_data(this)">
+                        <input type="text" name='name' placeholder="Full Name" required id='name' onkeyup="save_data(this)">
+                        <input type="text" name='school' placeholder="School Name" required id='school' onkeyup="save_data(this)">
+                        <input type="email" name='email' placeholder="Email" required id='email' onkeyup="save_data(this)">
+                        <input type="password" name="pass1" placeholder="Password" required minlength="8">
+                        <input type="password" name="pass2" placeholder="Confirm Password" required minlength="8">
+
+                        <center>
+                        <input type="submit" value="REGISTER">
+                        <div>
+                            <center>
+                            <a href="/login">Already have an Account? Login</a>
+                            </center>
+                        </div>
+                        </center>
+                    </form>
+                </div>
+                </center>
+            </div>
+
+            <div class="right">
+                <img src="/stylesheets/pics/login.png">
+            </div>
+        </div>
+
+        <% if (msg.length !== 0) {%>
+            <div id='snackbar'>
+                <%= msg %>
+            </div>
+            <script>
+                var x = document.getElementById('snackbar');
+                x.className = 'visible';
+                setTimeout(function(){
+                    x.className = x.className.replace('visible', '')
+                }, 3000)
+            </script>
+        <% } %>
+    </body>
+
+    <script>
+        document.getElementById('username').value = get_value('username');
+        document.getElementById('name').value = get_value('name');
+        document.getElementById('school').value = get_value('school');
+        document.getElementById('email').value = get_value('email');
+
+        function save_data(e){
+            localStorage.setItem(e.id, e.value)
+        };
+
+        function get_value(v){
+            return localStorage.getItem(v);
+        }
+    </script>
+</html>

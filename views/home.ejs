@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="/stylesheets/home.css">
+        <link rel="shortcut icon" type="image/png" href="/stylesheets/pics/favicon.png">
+    </head>
+    <body>
+        <%- include('common/loader') -%>
+        <%- include('common/navbar') -%>
+
+        <div class="main">
+        <div class="left">
+            <h1>Cryptic Hunt</h1>
+            <center>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eleifend lectus in orci dignissim tincidunt. Duis dapibus efficitur mollis. Sed vel est pretium, tristique lacus nec, dictum metus. Sed consectetur quam id est molestie vulputate. Integer quis aliquam leo. </p>
+            </center>
+            
+            <a href="/register"><button>REGISTER</button></a> &nbsp;
+            <a href="/login"><button>LOGIN</button></a>
+
+            <h6></h6>
+        </div>
+
+        <div class="right">
+            <img src="/stylesheets/pics/home.png">
+        </div>
+        </div>
+
+        <center>
+        <div class="lower-part">
+            <h1>FAQs :-</h1>
+            <br>
+
+            <center>
+
+            <button class="question">What is a Cryptic Hunt?</button>
+            <div class="answer">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eleifend lectus in orci dignissim tincidunt. Duis dapibus efficitur mollis. Sed vel est pretium, tristique lacus nec, dictum metus. Sed consectetur quam id est molestie vulputate. Integer quis aliquam leo.</p>
+            </div>
+            <br>
+            <button class="question">What are the Prizes?</button>
+            <div class="answer">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eleifend lectus in orci dignissim tincidunt. Duis dapibus efficitur mollis. Sed vel est pretium, tristique lacus nec, dictum metus. Sed consectetur quam id est molestie vulputate. Integer quis aliquam leo.</p>
+            </div>
+            <br>
+            <button class="question">How will I recieve my prizes?</button>
+            <div class="answer">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eleifend lectus in orci dignissim tincidunt. Duis dapibus efficitur mollis. Sed vel est pretium, tristique lacus nec, dictum metus. Sed consectetur quam id est molestie vulputate. Integer quis aliquam leo.</p>
+            </div>
+            <br>
+            <button class="question">How are the winners decided?</button>
+            <div class="answer">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eleifend lectus in orci dignissim tincidunt. Duis dapibus efficitur mollis. Sed vel est pretium, tristique lacus nec, dictum metus. Sed consectetur quam id est molestie vulputate. Integer quis aliquam leo.</p>
+            </div>
+            <br>
+
+            </center>
+
+            <script>
+                var ques = document.getElementsByClassName("question");
+                var x;
+                
+                for (x = 0; x < ques.length; x++) {
+                    ques[x].addEventListener("click", function(){
+                        this.classList.toggle("open");
+                        var answer = this.nextElementSibling;
+                        if (answer.style.maxHeight != 0){
+                            answer.style.maxHeight = null;
+                            this.style.borderBottomLeftRadius = '5px';
+                            this.style.borderBottomRightRadius = '5px';
+                        } 
+                        else {
+                            this.style.borderBottomLeftRadius = 0;
+                            this.style.borderBottomRightRadius = 0;
+                            answer.style.maxHeight = answer.scrollHeight + "px";
+                        } 
+                    });
+                }
+            </script>
+        </div>
+        </center>
+    </body>
+    <script>
+        localStorage.removeItem('username');
+        localStorage.removeItem('name');
+        localStorage.removeItem('school');
+        localStorage.removeItem('email');
+    </script>
+</html>

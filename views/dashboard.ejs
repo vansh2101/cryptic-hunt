@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>YOUR PROFILE</title>
+        <link rel="shortcut icon" type="image/png" href="/stylesheets/pics/favicon.png">
+    </head>
+    <body>
+        <%- include('common/loader') -%>
+        <%- include('common/navbar') -%>
+        <link rel="stylesheet" href="/stylesheets/dashboard.css">
+
+        <div class="main">
+            <div class="left">
+                <center>
+                <div class="container">
+                    <h1>PROFILE</h1>
+
+                    <label>Name:</label>
+                    <p><%= user.name%></p>
+
+                    <label>School Name:</label>
+                    <p><%= user.school%></p>
+
+                    <label>Email:</label>
+                    <p><%= user.email%></p>
+
+                    <label>Account Created:</label>
+                    <p><%= user.created%></p>
+                </div>
+                </center>
+            </div>
+
+            <div class="right">
+                <center>
+                <div class="container">
+                    <h1>PROGRESS</h1>
+
+                    <label>Level:</label>
+                    <p><%= user.level %></p>
+
+                    <label>Score:</label>
+                    <p><%= user.score %></p>
+
+                    <label>Progress:</label>
+                    <div class="progress-below"><div class="progress-top" id="progress"></div></div>
+                    <script>
+                        var x = (parseInt('<%= user.level %>') / 5) * 100;
+                        for(i=0; i<=x; i++){
+                            setTimeout(()=>document.getElementById('progress').style.width = String(i) +'%', 500)
+                        }
+                    </script>
+
+                    <a href="/question"><button>CONTINUE</button></a>
+                </div>
+                </center>
+            </div>
+        </div>
+    </body>
+</html>

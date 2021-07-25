@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="/stylesheets/auth.css">
+        <link rel="shortcut icon" type="image/png" href="/stylesheets/pics/favicon.png">
+    </head>
+    <body>
+        <%- include('common/loader') -%>
+        <%- include('common/navbar') -%>
+
+        <div class="main">
+            <div class="left">
+                <center>
+                <div class="container">
+                    <h1>SIGN IN</h1>
+                    <form action="/login" method="POST">
+                        <input type="text" name='username' placeholder="Username" required>
+                        <br>
+                        <input type="password" name="password" placeholder="Password" required>
+                        <div><a href="/email">Forgot Password?</a></div>
+
+                        <center>
+                        <input type="submit" value="LOGIN">
+                        <div>
+                            <center>
+                            <a href="/register">Don't have an Account? Register</a>
+                            </center>
+                        </div>
+                        </center>
+                    </form>
+                </div>
+                </center>
+            </div>
+
+            <div class="right">
+                <img src="/stylesheets/pics/login.png">
+            </div>
+        </div>
+
+        
+        <% if (messages.error) {%>
+            <div id='snackbar'>
+                <%= messages.error %>
+            </div>
+            <script>
+                var x = document.getElementById('snackbar');
+                x.className = 'visible';
+                setTimeout(function(){
+                    x.className = x.className.replace('visible', '')
+                }, 3000)
+            </script>
+        <% } %>
+        
+        <% if (msg.length !== 0) {%>
+            <div id='snackbar'>
+                <%= msg %>
+            </div>
+            <script>
+                var x = document.getElementById('snackbar');
+                x.className = 'visible';
+                setTimeout(function(){
+                    x.className = x.className.replace('visible', '')
+                }, 3000)
+            </script>
+        <% } %>
+        
+    </body>
+
+    <script>
+        localStorage.removeItem('username');
+        localStorage.removeItem('name');
+        localStorage.removeItem('school');
+        localStorage.removeItem('email');
+    </script>
+</html>
