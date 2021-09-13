@@ -16,7 +16,7 @@ const pass_link = require('./models/change_pass_link')
 
 
 //routing
-db.connect('mongodb+srv://sample_user:sample@cryptichunt.dbu2o.mongodb.net/cryptic_hunt?retryWrites=true&w=majority', {
+db.connect(process.env.DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -26,7 +26,11 @@ db.connect('mongodb+srv://sample_user:sample@cryptichunt.dbu2o.mongodb.net/crypt
 passport_init(passport); //calling the initialize function from auth.js
 
 const app = express();
+<<<<<<< HEAD
 app.listen(process.env.PORT || 8000); //server running at localhost:8000
+=======
+app.listen(process.enc.PORT || 8000); //server running at localhost:8000
+>>>>>>> 89ab8c2540a01f09bac9addd0a4e83aa83e440a9
 app.set('view engine', 'ejs'); //specifying the template engine for using the template language
 app.use(express.static(__dirname + '/public')); //linking the styles folder for access to css files
 
@@ -104,8 +108,8 @@ app.post('/email', function(req,res){
                         secure: false,
                         requireTLS: true,
                         auth: {
-                            user: 'sample.mail.2101@gmail.com',
-                            pass: 'sample@123',
+                            user: process.env.EMAIL,
+                            pass: process.env.EMAIL_PASSWORD,
                         }
                     })
                 
